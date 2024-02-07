@@ -1,3 +1,4 @@
+import OneRepMaxCalculator from "@/components/Forms/OneRepMaxCalculator";
 import Page from "@/components/Page";
 import { getMe } from "@/services/user";
 import { signOut, useSession } from "next-auth/react";
@@ -12,8 +13,7 @@ export default function Home() {
       title="Fitness - Home"
       content="A Fitness Application"
     >
-      <p>{JSON.stringify(status)}</p>
-      <p>{JSON.stringify(data)}</p>
+      <OneRepMaxCalculator />
       <div className="flex">
         <button className="btn btn-accent mr-5" onClick={() => getMe(data?.accessToken)}>
           Get Me
@@ -39,5 +39,5 @@ export default function Home() {
         </div>
       </div>
     </Page>
-  );
+  )
 }
