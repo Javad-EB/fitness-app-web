@@ -1,8 +1,9 @@
-import OneRepMaxCalculator from "@/components/Forms/OneRepMaxCalculator";
+import Link from "next/link";
 import Page from "@/components/Page";
 import { getMe } from "@/services/user";
 import { signOut, useSession } from "next-auth/react";
-import Link from "next/link";
+import CalorieCalculator from "@/components/Forms/CalorieCalculator";
+import OneRepMaxCalculator from "@/components/Forms/OneRepMaxCalculator";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       content="A Fitness Application"
     >
       <OneRepMaxCalculator />
+      <CalorieCalculator />
       <div className="flex">
         <button className="btn btn-accent mr-5" onClick={() => getMe(data?.accessToken)}>
           Get Me

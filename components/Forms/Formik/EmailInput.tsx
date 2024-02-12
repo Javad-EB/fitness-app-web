@@ -1,5 +1,4 @@
 import { FormikValues } from "formik"
-import FormikErrors from "./FormikErrors"
 import { Input } from "@/components/Input"
 import { getFormikFieldErrors } from "@/utils/getFormikFieldErrors"
 
@@ -20,9 +19,10 @@ export default function EmailInput({
                     getFormikFieldErrors({ formik, fieldName }) ? "input-error" : ""
                 }
                 autoComplete="email"
+                fieldName={fieldName}
+                formik={formik}
                 {...formik.getFieldProps(fieldName)}
             />
-            <FormikErrors fieldName={fieldName} formik={formik} />
         </div>
     )
 }

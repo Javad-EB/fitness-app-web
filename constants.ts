@@ -1,4 +1,4 @@
-import { object, string, ref } from 'yup';
+import { object, string, ref, number } from 'yup';
 
 export const baseURL = "http://localhost:4000/api/v1"
 export const tokenExpiration = 60 * 60 * 24
@@ -35,3 +35,11 @@ export const resetPasswordSchema = object({
     passwordRepeat: string().oneOf([ref("password"), undefined], "Password does not match").required("A repeat of the password is required")
 })
 
+export const calorieCalculatorSchema = object({
+    sex: string().required(),
+    age: string().required("Please enter your age"),
+    height: string().required("Please enter your height"),
+    weight: number().required("Please enter your weight"),
+    units: string().required(),
+    activityLevel: string().required(),
+});
