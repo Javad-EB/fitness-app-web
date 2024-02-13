@@ -20,7 +20,7 @@ export const Input = ({
     ...rest
 }: InputProps) => {
     return (
-        <div className={`form-control w-full max-w-xs ${className}`}>
+        <div className={`form-control ${className}`}>
             {label && <label className="label">{label}</label>}
             <input
                 type={type}
